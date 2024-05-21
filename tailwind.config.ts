@@ -8,13 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backgroundColor: {
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+        background: "rgb(var(--color-background) / <alpha-value>)",
+        foreground: "rgb(var(--color-foreground) / <alpha-value>)",
+        separator: "rgb(var(--color-separator) / <alpha-value>)",
+        backgroundBar: "rgb(var(--color-separator) / <alpha-value>)",
+      },
+      textColor: {
+        primary: "rgb(var(--color-foreground) / <alpha-value>)",
+      },
+      width: {
+        '100': '100vw'
+      },
+      height: {
+        '92': '92vh',
+        "8": '8vh'
       },
     },
   },
   plugins: [],
+  // darkMode: "class",
 };
 export default config;

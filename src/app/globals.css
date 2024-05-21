@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +30,23 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+/* 主题 */
+.theme-nord {
+  --color-primary: 94 129 172;
+  --color-secondary: 129 161 193;
+  --color-background: 46 52 64;
+  --color-foreground: 216 222 233;
+  --color-separator: 76 86 106;
+  --color-backgroundBar:0 0 0
+}
+
+.theme-solarizedLight {
+  --color-primary: 211 54 130;
+  --color-secondary: 133 153 0;
+  --color-background: 253 246 227;
+  --color-foreground: 101 123 131;
+  --color-separator: 88 110 117;
+  --color-backgroundBar:255 255 255
 }
