@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "install": "^0.13.0",
+    "lottie-web": "^5.12.2",
     "next": "14.2.3",
+    "npm": "^10.8.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-lottie": "^1.2.4",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
