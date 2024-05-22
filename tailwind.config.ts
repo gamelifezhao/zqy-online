@@ -19,14 +19,10 @@ const config: Config = {
       textColor: {
         primary: "rgb(var(--color-foreground) / <alpha-value>)",
       },
-      width: {
-        '100': '100vw'
-      },
-      height: {
-        '92': '92vh',
-        "8": '8vh'
-      },
     },
+    height: {
+      'full-minus-75px': 'calc(100vh - 75px)',
+    }
   },
   plugins: [],
   // darkMode: "class",

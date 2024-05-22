@@ -15,7 +15,9 @@ const Note = () => {
     return () => clearInterval(intervalId);
   }, []);
   const talk = useTypewriter(`${tong[randomInteger]} `);
-  return <div className="text-primary text-xl subpixel-antialiased">{talk}</div>;
+  return (
+    <div className="text-primary text-xl subpixel-antialiased">{talk}</div>
+  );
 };
 function App() {
   const { themes, activeTheme, setTheme } = useThemeStore((state) => state);
@@ -25,7 +27,8 @@ function App() {
       className={`
         theme-${activeTheme}
         bg-background
-        w-100 h-92 px-20
+        px-20
+        h-full-minus-75px
         flex flex-col justify-center items-center
       `}
     >

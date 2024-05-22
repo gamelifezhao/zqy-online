@@ -29,12 +29,12 @@ export default () => {
         />
       </div>
       <div
-        className="font-serif text-2xl font-semibold flex  justify-between w-1/4 items-center"
+        className="font-serif text-2xl font-semibold flex  justify-between w-auto items-center"
         style={{ lineHeight: "75px" }}
       >
-        <div className="cursor-pointer">实验室</div>
-        <div className="cursor-pointer">想法</div>
-        <div className="cursor-pointer">人间纪实</div>
+        <div className="cursor-pointer mr-5">实验室</div>
+        <div className="cursor-pointer  mr-5">想法</div>
+        <div className="cursor-pointer  mr-5">人间纪实</div>
         <div
           className={`w-20 h-10  border-solid border-2 rounded-lg border-indigo-900 flex justify-between bg-secondary truncate`}
         >
