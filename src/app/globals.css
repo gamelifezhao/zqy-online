@@ -39,14 +39,14 @@ body {
   --color-background: 46 52 64;
   --color-foreground: 216 222 233;
   --color-separator: 76 86 106;
-  --color-backgroundBar:0 0 0
+  --color-backgroundBar: 0 0 0;
 }
 
 .theme-solarizedLight {
   --color-primary: 211 54 130;
-  --color-secondary: 133 153 0;
+  --color-secondary: 67 155 224;
   --color-background: 253 246 227;
   --color-foreground: 101 123 131;
-  --color-separator: 88 110 117;
-  --color-backgroundBar:255 255 255
+  --color-separator: 70 116 235;
+  --color-backgroundBar: 255 255 255;
 }
