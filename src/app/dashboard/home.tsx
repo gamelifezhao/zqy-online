@@ -14,7 +14,7 @@ const Note = () => {
     // 组件卸载时清除定时器
     return () => clearInterval(intervalId);
   }, []);
-  const talk = useTypewriter(`${tong[randomInteger]}`);
+  const talk = useTypewriter(`${tong[randomInteger]} `);
   return <div className="text-primary text-xl subpixel-antialiased">{talk}</div>;
 };
 function App() {
