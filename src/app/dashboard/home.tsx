@@ -2,21 +2,33 @@
 import React, { useState, useEffect } from "react";
 import useThemeStore from "@/store/themeStore";
 import useTypewriter from "react-typewriter-hook";
+import { useRequest } from "ahooks";
 import { tong } from "./public/tong";
 const Note = () => {
-  const [randomInteger, setRandomInteger] = useState<any>("1");
-  useEffect(() => {
-    // 每 15 秒更新一次随机整数，范围是 1 到 117
-    const intervalId = setInterval(() => {
-      setRandomInteger(1 + Math.floor(Math.random() * 116)); // 生成 1 到 117 之间的随机整数
-    }, 15000);
+  const [data, setData] = useState<any>({ hitokoto: "" });
+  const getHitokoto = async () => {
+    const res: any = await fetch("https://v1.hitokoto.cn/?c=a&c=k&c=i&c=f", {
+      method: "GET",
+    });
+    res.json().then((res: any) => {
+      console.log("🚀 ~ res.json.then ~ res:", res);
+      setData(res);
+    });
+  };
 
-    // 组件卸载时清除定时器
-    return () => clearInterval(intervalId);
-  }, []);
-  const talk = useTypewriter(`${tong[randomInteger]} `);
+  const { run } = useRequest(getHitokoto, {
+    pollingInterval: 10000,
+    pollingWhenHidden: false,
+    manual: true,
+  });
+  useEffect(() => {
+    run();
+  }, [run]);
+  const talk = useTypewriter(data.hitokoto);
   return (
-    <div className="text-primary text-xl subpixel-antialiased">{talk}</div>
+    <div className="text-primary text-xl subpixel-antialiased w-1/2 mt-52 flex flex-col items-center">
+      {talk}
+    </div>
   );
 };
 function App() {
@@ -29,7 +41,7 @@ function App() {
         bg-background
         px-20
         h-full-minus-75px
-        flex flex-col justify-center items-center
+        flex flex-col items-center
       `}
     >
       <Note />
