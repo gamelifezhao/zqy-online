@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Quote } from "@/components/ui/Quote";
+// import { Quote } from "@/components/ui/Quote";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
             昀  の世界
           </h1>
           <p className="text-xl text-primary/80">
-            Here's an argvchs...
+            Here’s an argvchs...
           </p>
         </div>
       </div>
