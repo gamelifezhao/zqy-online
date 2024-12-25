@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../styles/themes.css';
+
+/* 文字过渡效果 */
+* {
+  transition-property: color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* 背景过渡效果 */
+body, div, header, nav, main, footer {
+  transition-property: background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,6 +54,7 @@
 }
 
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -30,7 +68,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}
 
 /* 主题 */
 .theme-nord {

@@ -1,52 +1,28 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import useThemeStore from "@/store/themeStore";
-import useTypewriter from "react-typewriter-hook";
-import { useRequest } from "ahooks";
-import { tong } from "./public/tong";
-const Note = () => {
-  const [data, setData] = useState<any>({ hitokoto: "" });
-  const getHitokoto = async () => {
-    const res: any = await fetch("https://v1.hitokoto.cn/?c=a&c=k&c=i&c=f", {
-      method: "GET",
-    });
-    res.json().then((res: any) => {
-      console.log("🚀 ~ res.json.then ~ res:", res);
-      setData(res);
-    });
-  };
+import React from "react";
+import { Quote } from "@/components/ui/Quote";
 
-  const { run } = useRequest(getHitokoto, {
-    pollingInterval: 10000,
-    pollingWhenHidden: false,
-    manual: true,
-  });
-  useEffect(() => {
-    run();
-  }, [run]);
-  const talk = useTypewriter(data.hitokoto);
+const Home = () => {
   return (
-    <div className="text-primary text-xl subpixel-antialiased w-1/2 mt-52 flex flex-col items-center">
-      {talk}
+    <div className="relative min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold mb-4 text-primary">
+            昀  の世界
+          </h1>
+          <p className="text-xl text-primary/80">
+            Here's an argvchs...
+          </p>
+        </div>
+      </div>
+    
+      {/* Quote Section */}
+      {/* <div className="container mx-auto px-4 py-16">
+        <Quote />
+      </div> */}
     </div>
   );
 };
-function App() {
-  const { themes, activeTheme, setTheme } = useThemeStore((state) => state);
 
-  return (
-    <div
-      className={`
-        theme-${activeTheme}
-        bg-background
-        px-20
-        h-full-minus-75px
-        flex flex-col items-center
-      `}
-    >
-      <Note />
-    </div>
-  );
-}
-
-export default App;
+export default Home;

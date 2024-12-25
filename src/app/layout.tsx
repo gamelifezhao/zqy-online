@@ -1,25 +1,28 @@
-import type { Metadata } from "next";
+"use client";
 import { Inter } from "next/font/google";
-import Bar from "./dashboard/bar";
 import "./globals.css";
+import MainLayout from "@/components/layout/MainLayout";
+import useThemeStore from "@/store/themeStore";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "别发呆了",
-  description: "别发呆了的实验室",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { activeTheme } = useThemeStore();
+
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(activeTheme);
+  }, [activeTheme]);
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Bar />
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
