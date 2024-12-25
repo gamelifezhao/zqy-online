@@ -275,7 +275,7 @@ function MilkyWay() {
   );
 }
 
-function QCloud({ position, scale }: { position: [number, number, number], scale: number }) {
+function QCloud({ position, scale }) {
   const groupRef = useRef<THREE.Group>(null);
   
   useFrame((state) => {
@@ -326,7 +326,7 @@ function MovingClouds() {
           (Math.random() * 40 - 20),
           Math.random() * 8 - 3,
           Math.random() * 4 - 8,
-        ] as [number, number, number],
+        ],
         scale: Math.random() * 0.9 + 1,
       })),
     []
