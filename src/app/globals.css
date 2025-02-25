@@ -2,44 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../styles/themes.css';
-
-/* 文字过渡效果 */
-* {
-  transition-property: color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-/* 背景过渡效果 */
-body, div, header, nav, main, footer {
-  transition-property: background-color, border-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-/* 滚动条样式 */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--text-secondary);
-  border-radius: 4px;
-  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-primary);
-}
-
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -54,7 +17,6 @@ body, div, header, nav, main, footer {
 }
 
 body {
-  transition: background-color 0.3s ease, color 0.3s ease;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -62,29 +24,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* 主题 */
-.theme-nord {
-  --color-primary: 94 129 172;
-  --color-secondary: 129 161 193;
-  --color-background: 46 52 64;
-  --color-foreground: 216 222 233;
-  --color-separator: 76 86 106;
-  --color-backgroundBar: 0 0 0;
-}
-
-.theme-solarizedLight {
-  --color-primary: 211 54 130;
-  --color-secondary: 67 155 224;
-  --color-background: 253 246 227;
-  --color-foreground: 101 123 131;
-  --color-separator: 70 116 235;
-  --color-backgroundBar: 255 255 255;
 }
