@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  target: 'serverless',
-  output: 'export',
+  output: 'standalone',
   distDir: 'out',
   images: {
     unoptimized: true,
@@ -10,7 +9,7 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   compress: true,
-  // 缓存优化
+  // 缓存优化啊啊啊啊
   generateEtags: true,
   // 构建优化
   optimizeFonts: true,
