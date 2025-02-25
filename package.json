@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "DISABLE_ESLINT_PLUGIN=true next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
