@@ -206,7 +206,7 @@ function Moon() {
 
       <group position={[0, 0, 1.9]}>
         <mesh position={[-0.5, 0.2, 0.3]} rotation={[0, -0.3, 0]}>
-          <cylinderGeometry args={[0.15, 0.15, 0.3, 32]} rotation={[Math.PI / 2, 0, 0]} />
+          <cylinderGeometry args={[0.15, 0.15, 0.3, 32]} />
           <meshStandardMaterial
             color="#1A1A1A"
             metalness={0.9}
@@ -215,7 +215,7 @@ function Moon() {
         </mesh>
         
         <mesh position={[0.5, 0.2, 0.3]} rotation={[0, 0.3, 0]}>
-          <cylinderGeometry args={[0.15, 0.15, 0.3, 32]} rotation={[Math.PI / 2, 0, 0]} />
+          <cylinderGeometry args={[0.15, 0.15, 0.3, 32]} />
           <meshStandardMaterial
             color="#1A1A1A"
             metalness={0.9}
@@ -224,7 +224,7 @@ function Moon() {
         </mesh>
 
         <mesh position={[0, -0.2, 0.3]} rotation={[0, 0, 0]}>
-          <cylinderGeometry args={[0.1, 0.1, 0.4, 32]} rotation={[Math.PI / 2, 0, 0]} />
+          <cylinderGeometry args={[0.1, 0.1, 0.4, 32]} />
           <meshStandardMaterial
             color="#1A1A1A"
             metalness={0.9}
@@ -289,7 +289,7 @@ function QCloud({ position, scale }: { position: number[], scale: number }) {
   });
 
   return (
-    <group ref={groupRef} position={position} scale={scale}>
+    <group ref={groupRef}>
       <mesh position={[0, 0, 0]}>
         <sphereGeometry args={[1.2, 16, 16]} />
         <meshStandardMaterial color="white" />
@@ -447,9 +447,6 @@ function AuroraLayer({ position, rotation, scale, delay = 0 }: { position: numbe
   return (
     <mesh
       ref={meshRef}
-      position={position}
-      rotation={rotation}
-      scale={scale}
     >
       <planeGeometry args={[120, 70, 50, 30]} />
       <shaderMaterial
