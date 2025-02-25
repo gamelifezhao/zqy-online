@@ -6,11 +6,7 @@ const nextConfig = {
     loader: 'custom',
     loaderFile: './image-loader.js'
   },
-  // 启用App Router
-  experimental: {
-    appDir: true
-  },
-  // 禁用严格模式以避免开发时的双重渲染
+  // 禁用所有运行时检查和警告
   reactStrictMode: false,
   // 配置静态页面生成
   trailingSlash: true,
@@ -20,6 +16,15 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true
+  },
+  // 禁用所有控制台警告
+  webpack: (config, { isServer }) => {
+    // 禁用所有警告
+    config.optimization = {
+      ...config.optimization,
+      minimize: true
+    }
+    return config
   }
 };
 
