@@ -1,31 +1,42 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'standalone',
   images: {
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './image-loader.js'
   },
-  // 禁用所有运行时检查和警告
-  reactStrictMode: false,
-  // 配置静态页面生成
-  trailingSlash: true,
-  // 允许客户端组件使用
-  typescript: {
-    ignoreBuildErrors: true
-  },
-  eslint: {
-    ignoreDuringBuilds: true
-  },
-  // 禁用所有控制台警告
-  webpack: (config, { isServer }) => {
-    // 禁用所有警告
-    config.optimization = {
-      ...config.optimization,
-      minimize: true
+  // 生产环境优化
+  swcMinify: true,
+  poweredByHeader: false,
+  compress: true,
+  // 缓存优化
+  generateEtags: true,
+  // 构建优化
+  optimizeFonts: true,
+  // 安全配置
+  headers: async () => [
+    {
+      source: '/:path*',
+      headers: [
+        {
+          key: 'X-DNS-Prefetch-Control',
+          value: 'on'
+        },
+        {
+          key: 'X-XSS-Protection',
+          value: '1; mode=block'
+        },
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=3600, must-revalidate'
+        }
+      ]
     }
-    return config
+  ],
+  // 实验性功能
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+    scrollRestoration: true
   }
-};
+}
 
-export default nextConfig;
+export default nextConfig
