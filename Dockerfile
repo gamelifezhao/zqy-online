@@ -12,8 +12,7 @@ COPY postcss.config.js tailwind.config.js ./
 
 # 复制源码并构建
 COPY . .
-RUN npm run build && \
-  npx next export
+RUN npm run build
 
 # 阶段2：生产镜像
 FROM nginx:stable-alpine
