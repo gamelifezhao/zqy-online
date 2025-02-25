@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  target: 'serverless',
+  output: 'export',  
   images: {
     unoptimized: true,
   },
