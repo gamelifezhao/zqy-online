@@ -17,7 +17,6 @@ RUN npm run build
 # 阶段2：生产镜像
 FROM nginx:stable-alpine
 COPY --from=builder /app/out /usr/share/nginx/html
-COPY --from=builder /app/public/favicon.ico /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 HEALTHCHECK --interval=30s --timeout=3s \
