@@ -4,8 +4,7 @@ WORKDIR /app
 
 # 安装依赖
 COPY package*.json ./
-RUN npm ci --include=dev --prefer-offline && \
-  npm install postcss autoprefixer tailwindcss --save-dev
+RUN npm install
 
 # 复制所有源文件
 COPY . .
