@@ -1,7 +1,3 @@
-import useThemeStore from "../store/themeStore";
-import MainLayout from "@/components/layout/MainLayout";
-import Home from "./dashboard/home";
-
 "use client";
 import React from "react";
 import DayNightScene from "@/components/three/DayNightScene";
