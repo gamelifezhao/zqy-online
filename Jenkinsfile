@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'jenkins-test'
         CONTAINER_NAME = 'jenkins-test'
-        HOST_PORT = '80'
+        HOST_PORT = '81'
         CONTAINER_PORT = '80'
         DOMAIN = 'zqylife.online'
     }
