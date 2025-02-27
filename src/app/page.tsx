@@ -1,50 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-
-const navItems = [
-  { name: '博客', href: '/blog' },
-  { name: '关于我', href: '/about' },
-  { name: 'Github', href: 'https://github.com' },
-]
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* 导航栏 */}
-      <motion.nav 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="fixed top-0 right-0 p-8 z-50"
-      >
-        <div className="backdrop-blur-md bg-white/10 dark:bg-black/10 rounded-full px-6 py-3 shadow-lg">
-          <ul className="flex items-center gap-2">
-            {navItems.map((item, index) => (
-              <motion.li
-                key={item.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group"
-              >
-                <Link
-                  href={item.href}
-                  className="relative block px-4 py-2 text-base font-medium rounded-full
-                    text-gray-700 dark:text-gray-200
-                    transition-all duration-300 ease-out
-                    hover:text-white dark:hover:text-white
-                    group-hover:bg-gradient-to-r group-hover:from-[#FF0080] group-hover:via-[#7928CA] group-hover:to-[#4299E1]
-                    group-hover:shadow-[0_0_2rem_-0.5rem_#7928CA]"
-                >
-                  <span className="relative z-10">{item.name}</span>
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </motion.nav>
-
       {/* 主要内容 */}
       <div className="min-h-screen flex flex-col items-center justify-center p-8">
         <motion.div

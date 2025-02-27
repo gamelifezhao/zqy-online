@@ -18,3 +18,38 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+@layer utilities {
+  .animate-gradient {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slideDown {
+    opacity: 0;
+    animation: slideDown 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
