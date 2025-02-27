@@ -1,8 +1,33 @@
-// src/app/blog/[slug]/page.tsx
 import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import BlogPostClient from './BlogPostClient'
+import Image from 'next/image'
+import { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
+import remarkGfm from 'remark-gfm'
+
+const components = {
+  img: (props: DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
+    const { src, alt } = props
+    if (!src) return null
+    
+    return (
+      <div className="relative w-full h-[300px] my-4">
+        <Image
+          src={src}
+          alt={alt || ''}
+          fill
+          className="object-contain"
+          loading="lazy"
+          onError={(e: any) => {
+            e.currentTarget.src = '/images/placeholder.png'
+          }}
+        />
+      </div>
+    )
+  }
+}
 
 export async function generateStaticParams() {
   try {
@@ -25,19 +50,25 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     const fileContent = await fs.readFile(filePath, 'utf8')
     const { content, data } = matter(fileContent)
 
-    return (
-      <div className="min-h-screen pt-24 px-4 max-w-4xl mx-auto">
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{data.title}</h1>
-          <MDXRemote source={content} />
-        </article>
-      </div>
-    )
+    // 在服务器端渲染 MDX 内容
+    const mdxContent = await MDXRemote({
+      source: content,
+      components,
+      options: {
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          format: 'md'
+        }
+      }
+    })
+
+    return <BlogPostClient mdxContent={mdxContent} data={data} />
   } catch (error) {
+    console.error('Error loading blog post:', error)
     return (
       <div className="min-h-screen pt-24 px-4 max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold text-red-500">
-          文章不存在或加载失败
+          文章加载失败: {error instanceof Error ? error.message : String(error)}
         </h1>
       </div>
     )

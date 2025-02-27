@@ -9,6 +9,7 @@ const navItems = [
   { name: '首页', href: '/' },
   { name: '记录', href: '/blog' },
   { name: '关于我', href: '/about' },
+  { name: 'Chat', href: '/chat' },
 ]
 
 export const Nav = () => {

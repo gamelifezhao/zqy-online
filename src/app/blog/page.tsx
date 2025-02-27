@@ -1,4 +1,3 @@
-// src/app/blog/page.tsx
 'use client'
 
 import { motion } from 'framer-motion'
@@ -7,13 +6,29 @@ import { FiClock, FiTag } from 'react-icons/fi'
 
 const blogPosts = [
   {
+    id: 'git20230321',
+    title: 'git提交commit规范',
+    description: 'git提交commit规范',
+    date: '2023-03-21',
+    tags: ['git', '随笔'],
+    readTime: '20 min'
+  },
+  {
     id: 'network-protocol',
     title: '深入理解网络协议：从TCP/IP到HTTP',
     description: '本文详细介绍了网络协议的基础知识，包括TCP/IP协议族、HTTP协议的工作原理等核心概念。',
-    date: '2024-02-27',
+    date: '2022-02-27',
     tags: ['网络', 'TCP/IP', 'HTTP'],
     readTime: '15 min'
   },
+  {
+    id: 'react20220908',
+    title: '读卡颂《react技术揭秘》随笔o.O!',
+    description: '读卡颂的react技术揭秘一写自己的见解以及学习到了什么。',
+    date: '2022-09-08',
+    tags: ['react', '卡颂', '随笔'],
+    readTime: '10 min'
+  }
   // 可以添加更多博客文章
 ]
 

@@ -9,7 +9,7 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   compress: true,
-  // 缓存优化啊啊啊啊
+  // 缓存优化
   generateEtags: true,
   // 构建优化
   optimizeFonts: true,
