@@ -6,6 +6,22 @@ import { FiClock, FiTag } from 'react-icons/fi'
 
 const blogPosts = [
   {
+    id: 'mcp-service-guide',
+    title: 'mcp服务实践学习',
+    description: 'mcp服务',
+    date: '2025-03-05',
+    tags: ['mcp', '服务', '学习'],
+    readTime: '20 min'
+  },
+  {
+    id: 'nextjs-output-mode',
+    title: 'Next.js中的输出模式详解：Static Export与Server Export对比',
+    description: '深入剖析Next.js的两种主要输出模式（Static Export和Server Export），解析它们的适用场景、优缺点及最佳实践。',
+    date: '2023-05-01',
+    tags: ['Next.js', '前端工程化', 'React'],
+    readTime: '15 min'
+  },
+  {
     id: 'git20230321',
     title: 'git提交commit规范',
     description: 'git提交commit规范',
@@ -17,7 +33,7 @@ const blogPosts = [
     id: 'network-protocol',
     title: '深入理解网络协议：从TCP/IP到HTTP',
     description: '本文详细介绍了网络协议的基础知识，包括TCP/IP协议族、HTTP协议的工作原理等核心概念。',
-    date: '2022-02-27',
+    date: '2023-01-27',
     tags: ['网络', 'TCP/IP', 'HTTP'],
     readTime: '15 min'
   },
@@ -25,7 +41,7 @@ const blogPosts = [
     id: 'react20220908',
     title: '读卡颂《react技术揭秘》随笔o.O!',
     description: '读卡颂的react技术揭秘一写自己的见解以及学习到了什么。',
-    date: '2022-09-08',
+    date: '2022-12-08',
     tags: ['react', '卡颂', '随笔'],
     readTime: '10 min'
   }
@@ -45,8 +61,9 @@ export default function Blog() {
         </h1>
 
         <div className="grid gap-6">
-          {blogPosts.map((post) => (
-            <motion.article
+          {blogPosts.map((post) => {
+            console.log(post)
+            return <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -69,7 +86,7 @@ export default function Blog() {
                     <div className="flex items-center gap-2">
                       <FiTag className="w-4 h-4" />
                       <div className="flex gap-2">
-                        {post.tags.map((tag) => (
+                        {post?.tags?.map((tag) => (
                           <span
                             key={tag}
                             className="px-2 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400"
@@ -84,7 +101,7 @@ export default function Blog() {
                 </div>
               </Link>
             </motion.article>
-          ))}
+          })}
         </div>
       </motion.div>
     </div>
