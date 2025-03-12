@@ -1,9 +1,10 @@
 // app/layout.tsx
 import { ThemeProvider } from '@/components/theme-provider'
 import ThemeBackground from '@/components/theme-background'
-import { Nav } from '@/components/Nav'
+import NavigationWrapper from '@/components/NavigationWrapper'
 import { Inter } from 'next/font/google'
 import './globals.css'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
@@ -17,10 +18,9 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="min-h-screen relative">
             <ThemeBackground />
-            <div className="relative">
-              <Nav />
+            <NavigationWrapper>
               {children}
-            </div>
+            </NavigationWrapper>
           </div>
         </ThemeProvider>
       </body>

@@ -1,0 +1,11 @@
+/* 覆盖Ant Design菜单项高度 */
+.ant-menu-inline .ant-menu-item {
+  height: 50px !important; /* 您想要的高度 */
+  line-height: 50px !important;
+}
+
+/* 如果使用了CSS Modules或者Ant Design的样式隔离，可能需要更高优先级 */
+:where(.css-dev-only-do-not-override-240cud).ant-menu-inline .ant-menu-item {
+  height: 50px !important;
+  line-height: 50px !important;
+}
