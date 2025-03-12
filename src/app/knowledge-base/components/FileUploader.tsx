@@ -263,13 +263,13 @@ const FileUploader: React.FC<FileUploaderProps> = ({ visible, onClose, onUploadC
           </Button>,
         ]}
       >
-        <Spin spinning={uploading} tip="文件处理中...">
+        <Spin spinning={uploading} tip={`文件处理中...`}>
           <Form form={form} layout="vertical">
             {/* 应用场景选择 */}
             <Form.Item 
               label="选择应用场景" 
               name="scenario"
-              rules={[{ required: true, message: '请选择应用场景' }]}
+              rules={[{ required: true, message: `请选择应用场景` }]}
             >
               <Select 
                 placeholder="选择此批文档的应用场景" 
@@ -318,10 +318,10 @@ const FileUploader: React.FC<FileUploaderProps> = ({ visible, onClose, onUploadC
               <p className="ant-upload-text">点击或拖拽文件到此区域进行上传</p>
               <p className="ant-upload-hint">
                 支持单个或批量上传，可一次性选择多个文件。支持PDF、Word、Excel、PPT、图片等多种格式。
-                {selectedScenario === 'customer-service' && ' 推荐上传FAQ文档、知识库文章和用户指南。'}
-                {selectedScenario === 'dashboard' && ' 推荐上传数据报表、Excel表格和配置文件。'}
-                {selectedScenario === 'doc-generation' && ' 推荐上传文档模板和示例文件。'}
-                {selectedScenario === 'data-pipeline' && ' 推荐上传数据集、脚本和配置文件。'}
+                {selectedScenario === 'customer-service' && ` 推荐上传FAQ文档、知识库文章和用户指南。`}
+                {selectedScenario === 'dashboard' && ` 推荐上传数据报表、Excel表格和配置文件。`}
+                {selectedScenario === 'doc-generation' && ` 推荐上传文档模板和示例文件。`}
+                {selectedScenario === 'data-pipeline' && ` 推荐上传数据集、脚本和配置文件。`}
               </p>
             </Dragger>
 
@@ -357,11 +357,11 @@ const FileUploader: React.FC<FileUploaderProps> = ({ visible, onClose, onUploadC
             
             {/* 额外信息 */}
             <Form.Item label="描述" name="description">
-              <Input.TextArea rows={2} placeholder="为这批文档添加描述信息" />
+              <Input.TextArea rows={2} placeholder={`为这批文档添加描述信息`} />
             </Form.Item>
             
             <Form.Item label="标签" name="tags">
-              <Input placeholder="输入标签，用逗号分隔" />
+              <Input placeholder={`输入标签，用逗号分隔`} />
             </Form.Item>
           </Form>
         </Spin>
@@ -370,7 +370,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ visible, onClose, onUploadC
       {/* 文件预览弹窗 */}
       <Modal
         open={previewVisible}
-        title={previewFile?.name || '文件预览'}
+        title={previewFile?.name || `文件预览`}
         footer={null}
         onCancel={() => setPreviewVisible(false)}
         width={800}
