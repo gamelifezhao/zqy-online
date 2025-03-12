@@ -194,11 +194,15 @@ const DocPreview = ({ document, onClose }: DocPreviewProps) => {
           <div className="text-xl font-bold mb-4">文本预览</div>
           <div className="text-gray-500 mb-4">文件: {document.name}</div>
           <div className="border border-gray-300 p-4 mb-4 text-left font-mono text-sm">
-            <p>// 这里是文本文件的内容预览示例</p>
-            <p>// 在实际应用中，将显示真实文本内容</p>
-            <p>console.log("这是一个示例文本文件");</p>
-            <p>console.log("适用于智能客服系统和实时数据分析管道场景");</p>
-            <p>// 更多内容...</p>
+            {/*
+              这里是文本文件的内容预览示例
+              在实际应用中，将显示真实文本内容
+            */}
+            <p>{`console.log("这是一个示例文本文件");`}</p>
+            <p>{`console.log("适用于智能客服系统和实时数据分析管道场景");`}</p>
+            {/*
+              更多内容...
+            */}
           </div>
         </div>
       </div>
