@@ -5,7 +5,6 @@ import { Upload, Button, message, Progress, Card, Modal, Spin, Select, Checkbox,
 import { InboxOutlined, FileOutlined, DeleteOutlined, EyeOutlined } from '@ant-design/icons';
 import type { UploadFile, UploadProps } from 'antd/es/upload/interface';
 import { Document } from '../types';
-import { useKnowledgeBase } from '../page';
 
 const { Dragger } = Upload;
 const { Option } = Select;
