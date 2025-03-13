@@ -1,0 +1,234 @@
+.node-config-panel {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  width: 320px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10;
+  max-height: calc(100vh - 160px);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.panel-content {
+  padding: 15px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+.form-group-split {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group-split .form-group {
+  flex: 1;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: #e53935 !important;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.panel-footer {
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #115abb;
+}
+
+.node-name-input {
+  font-weight: bold;
+}
+
+.edge-config-panel {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  width: 320px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  z-index: 10;
+}
+
+.edge-config-panel h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.edge-config-panel div {
+  margin-bottom: 10px;
+}
+
+.edge-config-panel label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.edge-config-panel input,
+.edge-config-panel select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.edge-config-panel button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.validation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.validation-overlay div {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.validation-errors {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 500px;
+  width: 100%;
+}
+
+.validation-errors h3 {
+  margin-top: 0;
+  color: #e53935;
+}
+
+.validation-errors ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.validation-errors li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.validation-errors button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
