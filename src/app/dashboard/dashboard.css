@@ -1,0 +1,139 @@
+/* 仪表板专用样式 */
+
+.performance-dashboard {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 顶部统计卡片 */
+.dashboard-stat-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 仪表板卡片 */
+.dashboard-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card .ant-card-head {
+  padding: 12px 16px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dashboard-card .ant-card-head-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 控制面板样式 */
+.control-panel {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 标签页样式 */
+.custom-tabs .ant-tabs-tab {
+  padding: 8px 16px;
+  margin-right: 6px;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+}
+
+.custom-tabs .ant-tabs-tab-active {
+  background-color: #1890ff !important;
+}
+
+.custom-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+}
+
+.custom-tabs .ant-tabs-nav::before {
+  border-bottom: none;
+}
+
+/* 异常告警样式 */
+.anomaly-item {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.anomaly-item:hover {
+  background-color: #fafafa;
+}
+
+/* 进度条样式 */
+.metric-progress .ant-progress-bg {
+  background: linear-gradient(90deg, #108ee9 0%, #87d068 100%);
+}
+
+/* 动画效果 */
+.dashboard-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 数据加载动画 */
+.data-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .performance-dashboard {
+    padding: 12px;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 12px;
+  }
+  
+  .control-panel {
+    padding: 12px;
+    flex-direction: column;
+  }
+  
+  .control-panel > div {
+    margin-bottom: 8px;
+  }
+}
